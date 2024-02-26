@@ -71,17 +71,17 @@
     .contact-info, .skills {
         background-color: #f9f9f9;
         padding: 10px;
-        margin: 10px 0;
+        margin: 13px 0;
     }
     .skill {
-        margin: 5px 0;
+        margin: 15px 0;
     }
     .skill-name {
         font-weight: bold;
     }
     .skill-level {
         height: 10px;
-        background-color: #ddd;
+        background-color: #2B554E;
         border-radius: 5px;
         overflow: hidden;
         position: relative;
