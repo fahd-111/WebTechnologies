@@ -1,0 +1,15 @@
+
+body{
+    padding: 0;
+    margin: 0;
+}
+.hero-section-img{
+    width: 468px;
+    height: 568px;
+    float: right;
+}
+
+.hero-section{
+    background-color: black;
+    height: 92.2vh;
+}
