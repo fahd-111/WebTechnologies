@@ -9,83 +9,11 @@
     <title>Term Project</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
-    <!-- Container wrapper -->
-    <div class="container-fluid">
-        <!-- Toggle button -->
-        <button
-                data-mdb-collapse-init
-                class="navbar-toggler"
-                type="button"
-                data-mdb-target="#navbarCenteredExample"
-                aria-controls="navbarCenteredExample"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-        >
-            <i class="fas fa-bars"></i>
-        </button>
-
-        <!-- Collapsible wrapper -->
-        <div
-                class="collapse navbar-collapse justify-content-center"
-                id="navbarCenteredExample"
-        >
-            <!-- Left links -->
-            <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <!-- Navbar dropdown -->
-                <li class="nav-item dropdown">
-                    <a
-                            data-mdb-dropdown-init
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            id="navbarDropdown"
-                            role="button"
-                            aria-expanded="false"
-                    >
-                        Dropdown
-                    </a>
-                    <!-- Dropdown menu -->
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li>
-                            <a class="dropdown-item" href="#">Action</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Another action</a>
-                        </li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled"
-                    >Disabled</a
-                    >
-                </li>
-            </ul>
-            <!-- Left links -->
-        </div>
-        <!-- Collapsible wrapper -->
-    </div>
-    <!-- Container wrapper -->
-</nav>
-<div class="hero-section">
-    <div class="hero-text-container">
-
-    </div>
-    <div class="hero-section-img-container">
-        <img src="./media/Untitled%20(668%20x%20768%20px).png"
-             class="hero-section-img"
-             alt="abcd"/>
-    </div>
+<div class="parallax-scroll-section">
+    <img src="media/BG%20Hero.png" alt="hello" class="bg-img img-layout"/>
+    <img src="media/HG.png" alt="hello" class="hero-section-img-container bg-img img1"/>
+    <img src="media/MG.png" alt="hello" class="hero-section-img2-container bg-img img2"/>
+    <img src="media/VG.png" alt="hello" class="hero-section-img3-container bg-img img3"/>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+<script src="./ScrollAnimation.js"></script>
 </body>
