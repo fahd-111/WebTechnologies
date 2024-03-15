@@ -3,19 +3,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const img2 = document.querySelector('.img2');
     const img3 = document.querySelector('.img3');
     const heroText = document.querySelector('.hero-text'); // Get the hero-text element
+    const firstSection = document.querySelector('.first-section'); // Select the first section
 
     const handleScroll = () => {
-        const scrollDistance = (window.pageYOffset || document.documentElement.scrollTop) / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+        const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        const firstSectionHeight = firstSection.offsetHeight; // Get the height of the first section
+        const scrollDistance = scrollPosition / (document.documentElement.scrollHeight - window.innerHeight) * 100;
 
-        img1.style.transform = `translate3d(0px, ${-scrollDistance * 0.8}%, 0px)`;
-        img2.style.transform = `translate3d(0px, ${-scrollDistance * 0.3}%, 0px)`;
-        img3.style.transform = `translate3d(0px, ${-scrollDistance * 0.2}%, 0px)`;
-        heroText.style.transform = `translate(-50%, ${-50 - scrollDistance * 0.8}%)`; // Adjust -0.1 as needed to control speed of movement
-        // Decrease opacity as scrolling progresses
-        heroText.style.opacity = 1 - scrollDistance * 0.009; // Adjust 0.01 to control rate of opacity reduction
+        img1.style.transform = `translate3d(0px, ${-scrollPosition * 0.1}%, 0px)`;
+        img2.style.transform = `translate3d(0px, ${-scrollPosition * 0.05}%, 0px)`;
+        img3.style.transform = `translate3d(0px, ${-scrollPosition * 0.02}%, 0px)`;
+        heroText.style.transform = `translate(-50%, ${-50 - scrollDistance * 0.8}%)`;
 
-
+        if (scrollPosition < firstSectionHeight) {
+            heroText.style.opacity = 1 - (scrollPosition / firstSectionHeight);
+        } else {
+            heroText.style.opacity = 0;
+        }
     };
+
+    // Trigger the handleScroll function on load to set initial positions and opacity
+    handleScroll();
 
     window.addEventListener('scroll', handleScroll);
 });

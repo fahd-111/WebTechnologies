@@ -7,6 +7,10 @@ body{
 
 }
 
+h1,h2,h3,p,.about-us-text{
+    color: #f4f4f4;
+}
+
 .bg-img{
     height: 100vh;
     width: 100%;
@@ -54,7 +58,7 @@ body{
     /*margin-bottom: -45%;*/
 }
 .img3{
-    object-fit: cover;
+    /*object-fit: cover;*/
     width: 100vw;
     height: 100vh;
     will-change: transform;
@@ -97,15 +101,12 @@ body{
 .gradient-hero{
     z-index: 9;
     position: relative;
-    top:50%;
+    top:55%;
     /*top: 10px;*/
     width: 100%;
     height: 100vh;
     background-image: linear-gradient(-3deg, #0b1d26, transparent 97%);
     opacity: 0.6;
-}
-.about-us-section{
-    height: 100vh;
 }
 
 .header-desktop{
@@ -117,22 +118,131 @@ body{
 }
 .header-desktop a{
     color: #f4f4f4;
+    font-weight: 600;
 }
-
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    color: var(--bs-nav-pills-link-active-color);
-    background-color: #0d6efd00;
-}
-.nav-pills .nav-link.active::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0; /* Adjust to control the distance from the bottom of the text */
-    height: 2px; /* Thickness of the underline */
-    background-color: #a5a5a5; /* Color of the underline */
+.header-desktop a:hover{
+    font-weight: 600;
 }
 .nav-pills .nav-link {
-    position: relative; /* Required for positioning the ::after pseudo-element */
-    padding-bottom: 5px; /* Adjust the bottom padding to create space for the underline */
+    position: relative; /* Ensures the positioning context for the pseudo-element */
+    padding-bottom: 5px; /* Ensures space for the underline */
+    overflow: hidden; /* Ensures the pseudo-element doesn't extend outside the link */
+    display: inline-block; /* Needed to properly size the links for the underline */
+}
+
+/* Initial state for the underline pseudo-element */
+.nav-pills .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Start with no underline visible */
+    height: 2px; /* Thickness of the underline */
+    background-color: #a5a5a5; /* Color of the underline */
+    transition: width 0.4s ease, left 0.4s ease; /* Smooth transition for the animation */
+}
+
+/* Hover state - expands the underline across the link */
+.nav-pills .nav-link:hover::after, .nav-pills .nav-link:focus::after {
+    width: 80%;
+    left: 10%;/* Ensure the underline starts from the left */
+}
+
+/* Maintains the underline style for active links */
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background-color: #0d6efd00;
+}
+
+/* Keeps the underline visible and full-width for active links */
+.nav-pills .nav-link.active::after, .nav-pills .show > .nav-link::after {
+    width: 80%; /* Adjust based on your design preference */
+    /*margin: 0 auto !important; !* Centers the underline *!*/
+    background-color: #a5a5a5; /* Matches non-hover state color */
+    left: 10%;
+}
+.nav-link:focus, .nav-link:hover {
+    color: #0B1D26;
+}
+
+.site-logo{
+    color: #f4f4f4;
+    padding-left: 1.5vw;
+}
+
+.contact-button{
+    background-color: #0B1D26;
+    color: #f4f4f4;
+    border: 1px solid rgba(11, 29, 38, 0);
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2.5vw;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.contact-button:hover{
+    background-color: rgba(244, 244, 244, 0);
+    color: #0B1D26;
+    border: 1px solid #0B1D26;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.about-us-section {
+    padding-top: 35%;
+    padding-left: 5%;
+    padding-right: 5%;
+    z-index: 9;
+}
+
+/*About Us Section*/
+.section-container {
+    display: flex;
+    align-items: center; /* Aligns items vertically */
+    justify-content: space-between; /* Puts maximum space between text and images */
+    padding: 20px; /* Adds some padding around the content */
+}
+
+.text-content {
+    flex-basis: 50%; /* Assigns 50% of the width to the text content */
+    max-width: 50%; /* Ensures text content doesn't exceed 50% of the container width */
+}
+
+.image-content {
+    flex-basis: 50%; /* Assigns 50% of the width to the image content */
+    max-width: 50%; /* Ensures image content doesn't exceed 50% of the container width */
+    display: flex;
+    flex-direction: column; /* Stacks images vertically */
+    align-items: center; /* Centers images in the column */
+    gap: 20px; /* Adds space between images */
+}
+
+.first-image,
+.second-image {
+    width: 100%; /* Makes images take the full width of their container */
+    height: auto; /* Keeps the aspect ratio of the images */
+    object-fit: cover; /* Ensures images cover the space nicely */
+}
+
+/* Optionally, add media queries to make the layout responsive */
+@media (max-width: 768px) {
+    .section-container {
+        flex-direction: column; /* Stacks the text and images vertically on smaller screens */
+    }
+
+    .text-content,
+    .image-content {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+}
+.about-text-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    width: 50%;
 }
