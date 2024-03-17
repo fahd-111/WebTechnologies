@@ -12,13 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         img1.style.transform = `translate3d(0px, ${-scrollPosition * 0.1}%, 0px)`;
         img2.style.transform = `translate3d(0px, ${-scrollPosition * 0.05}%, 0px)`;
-        img3.style.transform = `translate3d(0px, ${-scrollPosition * 0.02}%, 0px)`;
+        img3.style.transform = `translate3d(0px, ${-scrollPosition * 0.03}%, 0px)`;
         heroText.style.transform = `translate(-50%, ${-50 - scrollDistance * 0.8}%)`;
 
         if (scrollPosition < firstSectionHeight) {
+            heroText.style.display = 'block'
+
             heroText.style.opacity = 1 - (scrollPosition / firstSectionHeight);
         } else {
             heroText.style.opacity = 0;
+            heroText.style.display = 'none'
         }
     };
 

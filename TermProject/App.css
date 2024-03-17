@@ -204,6 +204,7 @@ h1,h2,h3,p,.about-us-text{
     align-items: center; /* Aligns items vertically */
     justify-content: space-between; /* Puts maximum space between text and images */
     padding: 20px; /* Adds some padding around the content */
+    margin-top: 33%;
 }
 
 .text-content {
@@ -215,18 +216,24 @@ h1,h2,h3,p,.about-us-text{
     flex-basis: 50%; /* Assigns 50% of the width to the image content */
     max-width: 50%; /* Ensures image content doesn't exceed 50% of the container width */
     display: flex;
-    flex-direction: column; /* Stacks images vertically */
+    flex-direction: row; /* Stacks images vertically */
     align-items: center; /* Centers images in the column */
-    gap: 20px; /* Adds space between images */
+    gap: 50px; /* Adds space between images */
 }
 
 .first-image,
 .second-image {
-    width: 100%; /* Makes images take the full width of their container */
-    height: auto; /* Keeps the aspect ratio of the images */
-    object-fit: cover; /* Ensures images cover the space nicely */
+    width: 40%;
+    height: 666px;
+    object-fit: cover;
 }
 
+.first-image{
+    margin-top: 170px;
+}
+.second-image{
+    margin-top: -170px;
+}
 /* Optionally, add media queries to make the layout responsive */
 @media (max-width: 768px) {
     .section-container {
