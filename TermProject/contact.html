@@ -8,11 +8,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./App.css"/>
+    <link rel="stylesheet" href="/TermProject/App.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <script src="./ScrollAnimation.js"></script>
-    <script src="GalleryCarousel.js"></script>
+    <script src="./GalleryCarousel.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <title>Term Project</title>
@@ -20,83 +20,49 @@
 <body>
 
 <!--Header-->
-<header class="d-flex justify-content-sm-between py-3 header-desktop">
+<header class="d-flex justify-content-sm-between py-3 header-desktop header-new-section">
     <h3 class="site-logo">SkyHike</h3>
     <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link" aria-current="page">Home</a></li>
         <li class="nav-item"><a href="#" class="nav-link">About</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Gallery</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Maps</a></li>
     </ul>
-    <h3 class="contact-button"><a href="contact.html">Contact Us</a></h3>
+    <h3 class="contact-button"><a href="./contact.html">Contact Us</a></h3>
 </header>
 
-<!--Hero Section-->
-<div class="parallax-scroll-section first-section">
-
-    <h1 class = "hero-text">Beyond the Horizon:<br/>Hike, Explore, Conquer.</h1>
-    <img src="media/BG%20Hero.png" alt="hello" class="bg-img img-layout"/>
-    <img src="media/HG.png" alt="hello" class="hero-section-img-container bg-img img1"/>
-    <img src="media/MG.png" alt="hello" class="hero-section-img2-container bg-img img2"/>
-    <img src="media/VG.png" alt="hello" class="bg-img img3"/>
-    <div class="gradient-hero"></div>
+<!--Contact Page Banner-->
+<div class = "contact-banner">
+    <h1 class = "contact-banner-text">Contact Us</h1>
+    <img src="media/GilgitBaltistan.jpg" alt="Hello" class="contact-bg-img">
 </div>
 
-<!--About Us Section-->
-<div class="section-container about-us-section">
-    <div class="text-content">
-        <p class="heading">Great food, great service, anywhere anytime</p>
-        <p>At Our Catering, we’re more than just caterers; we’re your partners in creating unforgettable experiences. Let us take you on a delectable journey through the heart of our cuisine.</p>
-        <!-- Insert more text and elements as needed here -->
-    </div>
-    <div class="image-content">
-        <img src="media/Landscape.jpg" alt="First Image Description" class="first-image">
-        <img src="media/Trees.jpg" alt="Second Image Description" class="second-image">
-    </div>
-</div>
 
-<!--Gallery Section-->
-<section class="gallery-section">
-    <h2 class="line-title">Hiking in Pakistan</h2>
-    <div class="owl-carousel custom-carousel owl-theme">
-        <div class="item active" style="background-image: url(./media/GilgitBaltistan.jpg);">
-            <div class="item-desc">
-                <h3>Gilgit Baltistan</h3>
-                <p>
-                    Gilgit Baltistan is a gateway to natural wonders where majestic mountains meet tranquil valleys.
-                    Its landscape is a treasure trove for adventurers and peace-seekers alike, offering breathtaking vistas at every turn.
-                </p>
-            </div>
-        </div>
-        <div class="item" style="background-image: url(./media/Kashmir.jpeg);">
-            <div class="item-desc">
-                <h3>Kashmir</h3>
-                <p>
-                    Kashmir is a tapestry of enchanting beauty, interwoven with lush meadows, crystal-clear lakes, and vibrant gardens.
-                    It's a place where tranquility and natural splendor reign supreme, inviting visitors to experience its serene allure.</p>
-            </div>
-        </div>
-        <div class="item" style="background-image: url(./media/Hunza.jpeg);">
-            <div class="item-desc">
-                <h3>Hunza</h3>
-                <p>
-                    Hunza Valley is a serene paradise on earth, known for its breathtaking landscapes, vibrant culture, and welcoming people.
-                    Surrounded by snow-capped peaks, it offers a glimpse into a world of pristine beauty and enduring traditions.
-                </p>
-            </div>
-        </div>
-        <div class="item" style="background-image: url(./media/Swat.jpeg);">
-            <div class="item-desc">
-                <h3>Swat</h3>
-                <p>
-                    The valley of Swat is a blend of grand rivers, ancient history, and lush green hills.
-                    It's a historic treasure, offering a peaceful retreat into nature,
-                    enriched by its archaeological sites and rich cultural heritage.
-                </p>
-            </div>
-        </div>
-       </div>
-</section>
+<!--Contact-->
+<div class="form-container">
+
+    <form id="contact" action="" method="post">
+
+        <h3 class = "heading">Please fill the form</h3>
+        <fieldset>
+            <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+        </fieldset>
+        <fieldset>
+            <input placeholder="Your Email Address" type="email" tabindex="2" required>
+        </fieldset>
+        <fieldset>
+            <input placeholder="Your Phone Number" type="tel" tabindex="3" required>
+        </fieldset>
+        <fieldset>
+            <textarea placeholder="Type your message here...." tabindex="5" required></textarea>
+        </fieldset>
+        <fieldset>
+            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+        </fieldset>
+        <p class="copyright">Designed by <a href="https://colorlib.com" target="_blank" title="Colorlib">Colorlib</a></p>
+    </form>
+
+</div>
 
 <!--Footer-->
 <footer class="footer-section">
@@ -137,7 +103,7 @@
                 <div class="col-xl-4 col-lg-4 mb-50">
                     <div class="footer-widget">
                         <div class="footer-logo">
-                           <h1>SkyHike</h1>
+                            <h1>SkyHike</h1>
                         </div>
                         <div class="footer-text">
                             <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
@@ -175,7 +141,7 @@
                         <div class="subscribe-form">
                             <form action="#">
                                 <input type="email" placeholder="Email Address">
-                                    <button><i class="fa fa-telegram"></i></button>
+                                <button><i class="fa fa-telegram"></i></button>
                             </form>
                         </div>
                     </div>
@@ -186,7 +152,7 @@
 </footer>
 
 <!--Scripts-->
-<script src="./ScrollAnimation.js"></script>
-<script src="GalleryCarousel.js"></script>
+<script src="/TermProject/ScrollAnimation.js"></script>
+<script src="/TermProject/GalleryCarousel.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>

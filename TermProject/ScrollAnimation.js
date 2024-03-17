@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         img3.style.transform = `translate3d(0px, ${-scrollPosition * 0.03}%, 0px)`;
         heroText.style.transform = `translate(-50%, ${-50 - scrollDistance * 0.8}%)`;
 
-        if (scrollPosition < firstSectionHeight -40) {
+        if (scrollPosition < firstSectionHeight -60) {
             heroText.style.display = 'block'
 
             heroText.style.opacity = 1 - (scrollPosition / firstSectionHeight);
