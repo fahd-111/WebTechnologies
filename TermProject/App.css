@@ -1,11 +1,16 @@
-
+:root {
+    --primary-color: #0B1D26;
+    --secondary-color: #76ABAE;
+    --tertiary-color: #FF5E14;
+}
 body{
     padding: 0;
     margin: 0;
-    background-color: #0B1D26;
+    background-color: var(--primary-color);
     overflow-x: hidden;
 
 }
+
 
 h1,h2,h3,p,.about-us-text{
     color: #f4f4f4;
@@ -22,11 +27,10 @@ h1,h2,h3,p,.about-us-text{
 
 }
 .parallax-scroll-section{
-
+    flex-direction: column;
     position: relative;
     display: flex;
     height: 100vh;
-
 }
 .img1{
 
@@ -105,24 +109,11 @@ h1,h2,h3,p,.about-us-text{
     /*top: 10px;*/
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(-3deg, #0b1d26, transparent 97%);
+    background-image: linear-gradient(-3deg, var(--primary-color), transparent 97%);
     opacity: 0.6;
 }
 
-.header-desktop{
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    z-index: 100;
-    background-color: rgba(5, 105, 158, 0);
-}
-.header-desktop a{
-    color: #f4f4f4;
-    font-weight: 600;
-}
-.header-desktop a:hover{
-    font-weight: 600;
-}
+
 .nav-pills .nav-link {
     position: relative; /* Ensures the positioning context for the pseudo-element */
     padding-bottom: 5px; /* Ensures space for the underline */
@@ -138,7 +129,7 @@ h1,h2,h3,p,.about-us-text{
     left: 0;
     width: 0; /* Start with no underline visible */
     height: 2px; /* Thickness of the underline */
-    background-color: #a5a5a5; /* Color of the underline */
+    background-color: var(--secondary-color); /* Color of the underline */
     transition: width 0.4s ease, left 0.4s ease; /* Smooth transition for the animation */
 }
 
@@ -157,20 +148,22 @@ h1,h2,h3,p,.about-us-text{
 .nav-pills .nav-link.active::after, .nav-pills .show > .nav-link::after {
     width: 80%; /* Adjust based on your design preference */
     /*margin: 0 auto !important; !* Centers the underline *!*/
-    background-color: #a5a5a5; /* Matches non-hover state color */
+    background-color: var(--secondary-color); /* Matches non-hover state color */
     left: 10%;
 }
 .nav-link:focus, .nav-link:hover {
-    color: #0B1D26;
+    /*font-weight: 400;*/
+    color: var(--primary-color);
 }
 
 .site-logo{
     color: #f4f4f4;
+    font-weight: 700;
     padding-left: 1.5vw;
 }
 
 .contact-button{
-    background-color: #0B1D26;
+    background-color: var(--secondary-color);
     color: #f4f4f4;
     border: 1px solid rgba(11, 29, 38, 0);
     font-size: 16px;
@@ -180,13 +173,15 @@ h1,h2,h3,p,.about-us-text{
     justify-content: center;
     align-items: center;
     margin-right: 2.5vw;
+    width: 130px;
+    height: 35px;
     font-weight: 600;
     transition: 0.3s;
 }
 .contact-button:hover{
     background-color: rgba(244, 244, 244, 0);
-    color: #0B1D26;
-    border: 1px solid #0B1D26;
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
     transition: 0.3s;
     cursor: pointer;
 }
@@ -206,9 +201,86 @@ h1,h2,h3,p,.about-us-text{
     justify-content: space-between; /* Puts maximum space between text and images */
     padding: 20px; /* Adds some padding around the content */
     margin-top: 13%;
-    z-index: 999;
+    z-index: 10;
 }
 
+.header-new-section{
+    /*background-color: rgba(0, 0, 0, 0.8);*/
+    /*transition: background-color 1s;*/
+    z-index: 9999;
+    /*transition: background-color 1s;*/
+
+}
+.header-new-section * {
+    position: relative;
+    z-index: 9999;
+}
+/* Define keyframe animations */
+@keyframes fadeInBlur {
+    from {
+        backdrop-filter: blur(0px);
+        background-color: rgba(255, 255, 255, 0);
+    }
+    to {
+        backdrop-filter: blur(11px);
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+}/* Define keyframe animations */
+@keyframes fadeOffBlur {
+    from {
+        backdrop-filter: blur(15px);
+        background-color: rgba(255, 255, 255, 0.4);
+
+    }
+    to {
+        backdrop-filter: blur(0px);
+        background-color: rgba(255, 255, 255, 0);
+    }
+}
+
+.header-new-section h3, .header-new-section .nav-link, .header-new-section .nav-link.active{
+    color: var(--primary-color);
+    /*font-weight: 600;*/
+    transition: color 0.3s ease;
+}
+ .header-new-section .nav-link:hover{
+    color: var(--bs-white);
+    transition: color 0.3s ease;
+}
+.header-new-section .nav-link.active:hover{
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+.header-new-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    /* Initialize properties; they will be animated by keyframes */
+    backdrop-filter: blur(0px);
+    background-color: rgba(255, 255, 255, 0);
+    animation: fadeInBlur 1s forwards;
+}
+
+.header-desktop{
+    position: sticky;
+    margin-bottom: -75px;
+    top: 0;
+    width: 100vw;
+    z-index: 100;
+    background-color: rgba(5, 105, 158, 0);
+    /*transition: background-color 0.5s;*/
+    /*transition: background-color 1s;*/
+
+}
+.header-desktop a{
+    color: #f4f4f4;
+    font-weight: 700;
+}
 .text-content {
     flex-basis: 50%; /* Assigns 50% of the width to the text content */
     max-width: 50%; /* Ensures text content doesn't exceed 50% of the container width */
@@ -258,8 +330,8 @@ h1,h2,h3,p,.about-us-text{
 
 /*Footer*/
 ul {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 .footer-section {
     background: #09171c;
@@ -269,7 +341,7 @@ ul {
     border-bottom: 1px solid #373636;
 }
 .single-cta i {
-    color: #ff5e14;
+    color: var(--secondary-color);
     font-size: 30px;
     float: left;
     margin-top: 8px;
@@ -291,10 +363,7 @@ ul {
     /*transition: font-size 0.3s;*/
 }
 .cta-text span a:hover {
-    /*color: #757575;*/
-    font-size: 17px;
-    /*transition: font-size 0.3s;*/
-   /*transform: scale(1.5);*/
+    color: var(--secondary-color);
 }
 .footer-content {
     position: relative;
@@ -346,9 +415,7 @@ ul {
 .twitter-bg{
     background: #55ACEE;
 }
-.google-bg{
-    background: #DD4B39;
-}
+
 .footer-widget-heading h3 {
     color: #fff;
     font-size: 20px;
@@ -363,19 +430,21 @@ ul {
     bottom: -15px;
     height: 2px;
     width: 50px;
-    background: #ff5e14;
+    background: var(--secondary-color);
 }
 .footer-widget ul li {
     display: inline-block;
     float: left;
     width: 50%;
+
     margin-bottom: 12px;
 }
 .footer-widget ul li a:hover{
-    color: #ff5e14;
+    color: var(--secondary-color);
 }
 .footer-widget ul li a {
     color: #878787;
+    text-decoration: none;
     text-transform: capitalize;
 }
 .subscribe-form {
@@ -386,19 +455,30 @@ ul {
     width: 100%;
     padding: 14px 28px;
     background: #2E2E2E;
-    border: 1px solid #2E2E2E;
+    border-radius: 0;
+    border: none;
     color: #fff;
 }
+
+input:invalid {
+    border: 1px solid red;
+}
+
+input:focus {
+    border-radius: 0;
+    border: none; /* Changed to black */
+}
+
 .subscribe-form button {
     position: absolute;
     right: 0;
-    background: #ff5e14;
+    background:var(--secondary-color);
     padding: 13px 10px;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #ff5e14;
+    border: 1px solid var(--secondary-color);
     top: 0;
 }
 .subscribe-form button i {
@@ -406,24 +486,13 @@ ul {
     font-size: 22px;
     transform: rotate(-6deg);
 }
-.copyright-area{
-    background: #202020;
-    padding: 25px 0;
-}
-.copyright-text p {
-    margin: 0;
-    font-size: 14px;
-    color: #878787;
-}
-.copyright-text p a{
-    color: #ff5e14;
-}
+
 .footer-menu li {
     display: inline-block;
     margin-left: 20px;
 }
 .footer-menu li:hover a{
-    color: #ff5e14;
+    color: var(--secondary-color);
 }
 .footer-menu li a {
     font-size: 14px;

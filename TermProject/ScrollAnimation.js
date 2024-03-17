@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const img3 = document.querySelector('.img3');
     const heroText = document.querySelector('.hero-text'); // Get the hero-text element
     const firstSection = document.querySelector('.first-section'); // Select the first section
+    const header = document.querySelector('header');
 
     const handleScroll = () => {
         const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
@@ -15,11 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
         img3.style.transform = `translate3d(0px, ${-scrollPosition * 0.03}%, 0px)`;
         heroText.style.transform = `translate(-50%, ${-50 - scrollDistance * 0.8}%)`;
 
-        if (scrollPosition < firstSectionHeight) {
+        if (scrollPosition < firstSectionHeight -40) {
             heroText.style.display = 'block'
 
             heroText.style.opacity = 1 - (scrollPosition / firstSectionHeight);
+            header.classList.remove('header-new-section');
         } else {
+            header.classList.add('header-new-section');
             heroText.style.opacity = 0;
             heroText.style.display = 'none'
         }
