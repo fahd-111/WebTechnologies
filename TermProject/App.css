@@ -194,6 +194,9 @@ h1,h2,h3,p,.about-us-text{
     z-index: 9;
     background-color: var(--primary-color);
 }
+.about-us-section p{
+    width: 70%;
+}
 .form-container{
     background-color: var(--primary-color);
     display: flex;
@@ -204,7 +207,7 @@ h1,h2,h3,p,.about-us-text{
     align-items: center;
     /*width: 100%;*/
 
-    height: 100vh;
+    height: 80vh;
 }
 
 /*About Us Section*/
@@ -252,13 +255,18 @@ h1,h2,h3,p,.about-us-text{
     }
 }
 
-.header-new-section h3, .header-new-section .nav-link, .header-new-section .nav-link.active{
+.header-new-section h3, .header-new-section .nav-link{
     color: var(--primary-color);
     /*font-weight: 600;*/
     transition: color 0.3s ease;
 }
+.active{
+    color: var(--bs-white) !important;
+    /*font-weight: 600;*/
+    transition: color 0.3s ease;
+}
  .header-new-section .nav-link:hover{
-    color: var(--bs-white);
+    color: var(--bs-white) ;
     transition: color 0.3s ease;
 }
 .header-new-section .nav-link.active:hover{
@@ -296,6 +304,7 @@ h1,h2,h3,p,.about-us-text{
     font-weight: 700;
 }
 .text-content {
+    padding-left: 100px;
     flex-basis: 50%; /* Assigns 50% of the width to the text content */
     max-width: 50%; /* Ensures text content doesn't exceed 50% of the container width */
 }
@@ -312,7 +321,7 @@ h1,h2,h3,p,.about-us-text{
 .first-image,
 .second-image {
     width: 40%;
-    height: 666px;
+    height: 450px;
     object-fit: cover;
 }
 
@@ -568,7 +577,22 @@ button {
 .line-title {
     position: relative;
     width: 400px;
+
 }
+.about-us-heading{
+   margin-top: 48px;
+}
+.line-title2 {
+    margin-bottom: 48px !important  ;
+    padding-bottom: 16px;
+    font-size: 30px;
+    line-height: 28px;
+    font-weight: 700;
+    color: white;
+    position: relative;
+    text-transform: capitalize;
+}
+
 .line-title::before,
 .line-title::after {
     content: "";
@@ -590,7 +614,10 @@ button {
 /******* Middle section CSS Start ******/
 /* -------- Landing page ------- */
 .gallery-section {
-    padding: 60px 50px;
+    padding: 100px 100px;
+}
+.gallery-section{
+    /*margin-top: 70px;*/
 }
 .gallery-section .owl-stage {
     margin: 15px 0;
@@ -702,6 +729,7 @@ button {
         line-height: 32px;
     }
     .line-title {
+
         width: 330px;
     }
 
@@ -866,13 +894,20 @@ fieldset {
 #contact input[type="text"],
 #contact input[type="email"],
 #contact input[type="tel"],
-#contact input[type="url"],
 #contact textarea {
     width: 100%;
     border: 1px solid #ccc;
     background: #FFF;
     margin: 0 0 5px;
     padding: 10px;
+}
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"] {
+    border-radius: 10px;
+}
+#contact textarea {
+    border-radius:10px;
 }
 
 #contact input[type="text"]:hover,
@@ -898,13 +933,14 @@ fieldset {
     border: none;
     background: var(--secondary-color);
     color: #FFF;
+    border-radius: 10px;
     margin: 0 0 5px;
     padding: 10px;
     font-size: 15px;
 }
 
 #contact button[type="submit"]:hover {
-    background: #43A047;
+    background: var(--primary-color) !important;
     -webkit-transition: background 0.3s ease-in-out;
     -moz-transition: background 0.3s ease-in-out;
     transition: background-color 0.3s ease-in-out;
@@ -922,8 +958,5 @@ fieldset {
 #contact textarea:focus {
     outline: 0;
     border: 1px solid #aaa;
-}
-#contact input:invalid{
-    border: 1px solid red;
 }
 

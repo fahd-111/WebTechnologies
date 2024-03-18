@@ -8,24 +8,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <script src="NavbarHandler.js"></script>
     <link rel="stylesheet" href="/TermProject/App.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <script src="./ScrollAnimation.js"></script>
-    <script src="./GalleryCarousel.js"></script>
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">-->
+<!--    <script src="./ScrollAnimation.js"></script>-->
+<!--    <script src="./GalleryCarousel.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>-->
+    <script src="./FormHandle.js" crossorigin="anonymous"></script>
     <title>Term Project</title>
 </head>
 <body>
 
 <!--Header-->
 <header class="d-flex justify-content-sm-between py-3 header-desktop header-new-section">
-    <h3 class="site-logo">SkyHike</h3>
+    <a href="index.html"><h3 class="site-logo" >SkyHike</h3></a>
     <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
         <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Gallery</a></li>
+        <li class="nav-item"><a href="./index.html/#Gallery" class="nav-link">Gallery</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Maps</a></li>
     </ul>
     <h3 class="contact-button"><a href="./contact.html">Contact Us</a></h3>
@@ -45,13 +47,13 @@
 
         <h3 class = "heading">Please fill the form</h3>
         <fieldset>
-            <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+            <input placeholder="Name" type="text" tabindex="1" required autofocus>
         </fieldset>
         <fieldset>
-            <input placeholder="Your Email Address" type="email" tabindex="2" required>
+            <input placeholder="Email Address" type="email" tabindex="2" required>
         </fieldset>
         <fieldset>
-            <input placeholder="Your Phone Number" type="tel" tabindex="3" required>
+            <input placeholder="Phone Number" type="tel" tabindex="3" required>
         </fieldset>
         <fieldset>
             <textarea placeholder="Type your message here...." tabindex="5" required></textarea>
@@ -123,8 +125,8 @@
                         </div>
                         <ul>
                             <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Gallery</a></li>
+                            <li><a href="index.html/#AboutUs">About</a></li>
+                            <li><a href="index.html/#Gallery">Gallery</a></li>
                             <li><a href="#">Maps</a></li>
                             <li><a href="#">Contact</a></li>
                         </ul>

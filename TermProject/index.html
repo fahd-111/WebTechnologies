@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="./App.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <script src="./ScrollAnimation.js"></script>
-    <script src="GalleryCarousel.js"></script>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <title>Term Project</title>
@@ -21,42 +21,45 @@
 
 <!--Header-->
 <header class="d-flex justify-content-sm-between py-3 header-desktop">
-    <h3 class="site-logo">SkyHike</h3>
+    <a href="index.html"><h3 class="site-logo" >SkyHike</h3></a>
     <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Gallery</a></li>
+        <li class="nav-item"><a href="#Home" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#AboutUs" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="#Gallery" class="nav-link">Gallery</a></li>
         <li class="nav-item"><a href="#" class="nav-link">Maps</a></li>
     </ul>
     <h3 class="contact-button"><a href="contact.html">Contact Us</a></h3>
 </header>
 
 <!--Hero Section-->
-<div class="parallax-scroll-section first-section">
-
+<section  class="parallax-scroll-section first-section" id="Home">
     <h1 class = "hero-text">Beyond the Horizon:<br/>Hike, Explore, Conquer.</h1>
     <img src="media/BG%20Hero.png" alt="hello" class="bg-img img-layout"/>
     <img src="media/HG.png" alt="hello" class="hero-section-img-container bg-img img1"/>
     <img src="media/MG.png" alt="hello" class="hero-section-img2-container bg-img img2"/>
     <img src="media/VG.png" alt="hello" class="bg-img img3"/>
     <div class="gradient-hero"></div>
-</div>
+</section>
 
 <!--About Us Section-->
-<div class="section-container about-us-section">
+<section class="section-container about-us-section" id="AboutUs">
     <div class="text-content">
-        <p class="heading">Great food, great service, anywhere anytime</p>
-        <p>At Our Catering, we’re more than just caterers; we’re your partners in creating unforgettable experiences. Let us take you on a delectable journey through the heart of our cuisine.</p>
+        <span class="line-title line-title2">Who We Are</span>
+        <h1 class="about-us-heading">Discover the Great <br>Outdoors with Us</h1>
+        <p>Our commitment to safety and preserving the natural environment ensures a responsible and enriching experience for every adventurer.
+            Whether you're seeking to conquer new heights, find peace in the heart of nature, or simply explore the wilderness with like-minded individuals, we're here to guide you every step of the way.
+            Join us, and let's embark on a journey where every path leads to discovery and every trail tells a story.</p>
         <!-- Insert more text and elements as needed here -->
     </div>
     <div class="image-content">
         <img src="media/Landscape.jpg" alt="First Image Description" class="first-image">
         <img src="media/Trees.jpg" alt="Second Image Description" class="second-image">
     </div>
-</div>
+</section>
 
 <!--Gallery Section-->
-<section class="gallery-section">
+
+<section id="Gallery" class="gallery-section" >
     <h2 class="line-title">Hiking in Pakistan</h2>
     <div class="owl-carousel custom-carousel owl-theme">
         <div class="item active" style="background-image: url(./media/GilgitBaltistan.jpg);">
@@ -157,8 +160,8 @@
                         </div>
                         <ul>
                             <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Gallery</a></li>
+                            <li><a href="#AboutUs">About</a></li>
+                            <li><a href="#Gallery">Gallery</a></li>
                             <li><a href="#">Maps</a></li>
                             <li><a href="#">Contact</a></li>
                         </ul>
@@ -189,4 +192,5 @@
 <script src="./ScrollAnimation.js"></script>
 <script src="GalleryCarousel.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="NavbarHandler.js"></script>
 </body>
