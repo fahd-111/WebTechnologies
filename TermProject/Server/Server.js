@@ -8,7 +8,7 @@ server.use(express.static("public"));
 server.get('/', (req, res) => {
     // res.send({name:'Hashim'});
 
-    res.render('Login')
+    res.render('home')
 })
 
 server.listen(3000)
