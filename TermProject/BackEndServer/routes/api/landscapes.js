@@ -19,23 +19,24 @@ router.delete("/api/landscapes/:id", async (req, res) => {
     return res.send(game);
 });
 
-
 router.post("/api/landscapes", async (req, res) => {
     let data = req.body;
     let record = new Landscape(data);
 
-    // try {
+    try {
         await record.save();
+        console.log(record,req.body)
         return res.send(record);
-    // } catch (error) {
-    //     console.error('Error saving landscape:', error);
-    //     // Respond with a server error status and the error message
-    //     return res.status(500).send(error.message);
-    // }
+    } catch (error) {
+        console.error('Error saving landscape:', error);
+        // Respond with a server error status and the error message
+        return res.status(500).send(error.message);
+    }
 });
+
 router.get("/api/landscapes", async function (req, res) {
-    let games = await Landscape.find();
-    return res.send(games);
+    let landscapes = await Landscape.find();
+    return res.send(landscapes);
 });
 
 module.exports = router;

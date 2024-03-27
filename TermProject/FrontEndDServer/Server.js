@@ -2,6 +2,7 @@ const express = require('express');
 // const {join} = require("path");
 let server = express();
 
+server.use(express.json())
 server.set("view engine","ejs");
 server.use(express.static("public"));
 // server.set('views', join(__dirname, 'views'));
