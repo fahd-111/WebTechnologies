@@ -11,4 +11,8 @@ server.get('/', (req, res) => {
     res.render('home')
 })
 
+server.get('/contact',(req , res) =>{
+    res.render("contact")
+})
+
 server.listen(3000)

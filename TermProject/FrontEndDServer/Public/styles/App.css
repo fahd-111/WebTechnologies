@@ -208,43 +208,6 @@ h1,h2,h3,p,.about-us-text{
 
     height: 80vh;
 }
-.api-container{
-    background-color: var(--primary-color);
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    z-index: 10;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-.api-form-container{
-    background-color: var(--primary-color);
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    z-index: 10;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-
-}
-.api-form-container #createForm{
-    width: 50%;
-    display: flex;
-    padding: 10px;
-    gap: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    border: 1px solid var(--secondary-color);
-    justify-content: flex-start;
-    flex-direction: column;
-}
-label{
-    color: #f4f4f4;
-    font-weight: 600;
-}
-
 
 /*About Us Section*/
 .section-container {
@@ -844,11 +807,10 @@ button {
 /*Contact Us Page*/
 
 .contact-banner{
-    /*background-image: url("Server/Public/media/Hunza.jpeg");*/
-    /*background-size: cover;*/
-    /*background-position: center;*/
-    /*background-repeat: no-repeat;*/
-
+    background-image: url("../media/Hunza.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     height: 45vh;
     display: flex;
     justify-content: center;
