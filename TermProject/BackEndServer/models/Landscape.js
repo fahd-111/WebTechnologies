@@ -4,6 +4,10 @@ const landscapeSchema = new mongoose.Schema({
     // Define your schema here, for example:
     name: String,
     description: String,
+    img: {
+        data: Buffer,
+        contentType: String
+    }
     // More fields as needed
 });
 

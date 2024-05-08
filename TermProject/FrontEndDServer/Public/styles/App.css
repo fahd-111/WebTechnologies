@@ -959,3 +959,11 @@ fieldset {
     border: 1px solid #aaa;
 }
 
+.data-form-uploader{
+    position: relative;
+    z-index: 2;
+}
+.storiesChild{
+    display: flex;
+    flex-direction: column;
+}

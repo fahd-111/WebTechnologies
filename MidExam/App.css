@@ -163,7 +163,7 @@ ul{
     margin-top: 12px;
 }
 .caption {
-    display: none;
+    display: flex;
     text-align: center;
     margin-top: 5px; /* Adjust as needed */
 }
