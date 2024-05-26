@@ -24,12 +24,16 @@
     <%- include('./partials/header') %>
 <% } %>
 
-<%-body %>
 
+<%-body %>
 
 <% if(typeof includeFooter === 'undefined' || includeFooter) { %>
     <%- include('./partials/footer') %>
 <% } %>
+<% if(typeof user === 'undefined' || user) { %>
+    <%- include('./partials/userWidget') %>
+<% } %>
+
 
 
 

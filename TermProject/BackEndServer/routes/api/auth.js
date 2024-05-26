@@ -23,21 +23,25 @@ router.post("/api/auth/login", async (req, res) => {
             config.get("jwtPrivateKey"),
             { expiresIn: "1h" }
         );
+
         req.session.userId = user._id;
         req.session.userRoles = user.roles;
-        req.session.userData = {
+        req.session.userData = JSON.stringify({
             name: user.name,
-            email: user.email
-        };
+            email: user.email,
+            userRoles: user.roles,
+        });
         req.session.save();
-        console.log(req.session, "req.session")
+        console.log(req.session, "req.session");
+
         res.cookie("AccessToken", token, {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
             sameSite: "strict",
         });
+
         const session = req.session;
-        return res.status(202).send({session, token, message: "Logged in successfully" });
+        return res.status(202).send({ session, token, message: "Logged in successfully" });
     } catch (error) {
         console.error("Error during login:", error); // Log any errors for troubleshooting
         return res.status(500).send({ message: "Internal server error", error: error.message });
@@ -76,4 +80,17 @@ router.post("/api/auth/register", async (req, res) => {
         return res.status(500).send({ message: "Internal server error", error: error.message });
     }
 });
+
+
+router.post("/api/auth/logout", (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            return res.status(500).send({ message: "Logout failed" });
+        }
+        res.clearCookie("SkyHikeSession");
+        res.status(200).send({ message: "Logged out successfully" });
+    });
+});
+
+
 module.exports = router;

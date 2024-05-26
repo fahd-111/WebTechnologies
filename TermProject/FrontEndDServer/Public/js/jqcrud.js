@@ -233,25 +233,20 @@ async function handleFormSubmission(event) {
         });
 
         const data = await response.json();
-        console.log("Response Data:", data); // Log the response to verify
-
-        console.log("Response:", response); // Log the response to verify
-        if (response.ok) {
+         if (response.ok) {
             // Handle successful login
-            console.log("Login session:", data.session);
-            localStorage.setItem("token", data.token); // Save the token
+             localStorage.setItem("token", data.token); // Save the token
             // save cookie
 
             document.cookie = `Session Token=${data.session}; Secure; SameSite=Strict`;
             document.cookie = `UserRole=${data.session.userRoles}; Secure; SameSite=Strict`;
             document.cookie = `userData=${data.session.userData}; Secure; SameSite=Strict`;
-            console.log("Cookie:", document.cookie);
             // Redirect to the dashboard or other authenticated route
-            // window.location.href = "/";
+             alert("Login successful.")
+            window.location.href = "/";
             // Optionally redirect or update the UI
         } else {
             // Handle login failure
-            console.error("Login failed:", data.message);
             alert("Login failed: " + data.message);
         }
     } catch (error) {
@@ -279,19 +274,70 @@ function handleRegisterFormSubmission(event) {
             "roles":["user"]
         },
         success: function(response) {
-            console.log(response);
             // Handle successful registration here, such as redirecting to the login page
+
             alert("Registration successful. Please log in.");
             window.location.href = "/login";
         },
         error: function(error) {
+
             console.error('Error:', error);
-            // alert('Registration failed: ' + error.responseJSON.message);
+            alert('Registration failed: ' + error.responseJSON.message);
         }
     });
 }
+function handleLogout(event){
+    event.preventDefault();
 
+
+    $.ajax({
+        url: "http://localhost:4000/api/auth/logout",
+        method: "POST",
+        success: function(response) {
+            if (response.message) {
+                // Show flash message
+
+                console.log(response.message,"message")
+                // Hide the flash message after 3 seconds
+
+                alert("Logout successful.");
+                localStorage.removeItem("token");
+                // cookies clear
+                document.cookie = `Session Token=; Secure`
+                document.cookie = `UserRole=; Secure`
+                document.cookie = `userData=; Secure`
+                console.log("Cookie:", document.cookie);
+                window.location.href = "/";
+                // Optionally, you can redirect the user after logout
+                // window.location.href = '/login';
+            }
+        },
+        error: function(error) {
+            console.error('Error:', error);
+        }
+
+    })
+}
 $(document).ready(function() {
     $("#Register-Form").on("submit", handleRegisterFormSubmission);
-});
+    $("#logoutForm").on("submit", handleLogout);
 
+});
+document.addEventListener('DOMContentLoaded', function () {
+    var userWidget = document.querySelector('.user-widget');
+    var userPopup = document.querySelector('.user-popup');
+
+    userWidget.addEventListener('mouseenter', function () {
+        userPopup.classList.remove('hidden');
+        userPopup.style.display = 'block';
+    });
+
+    userWidget.addEventListener('mouseleave', function () {
+        userPopup.classList.add('hidden');
+        setTimeout(function () {
+            if (!userWidget.matches(':hover')) {
+                userPopup.style.display = 'none';
+            }
+        }, 1000); // Delay for 1 second
+    });
+});

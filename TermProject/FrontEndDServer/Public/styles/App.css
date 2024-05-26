@@ -1073,3 +1073,94 @@ fieldset {
     margin-bottom: 100px;
     flex-wrap: wrap;
 }
+
+.user-widget {
+    position: fixed;
+    bottom: 44px;
+    z-index: 999;
+    right: 41px;
+    cursor: pointer;
+    background-color: var(--bs-white);
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    transition: all 0.5s ease-out;
+    p{
+        color: #0B1D26;
+    }
+}
+.user-widget i {
+    font-size: 30px;
+}
+
+.user-popup {
+    position: absolute;
+    top: 3px;
+    width: 189px;
+    display: none;
+    right: 0;
+    opacity: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: clip;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+
+    }
+}
+.user-widget:hover .user-popup {
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+
+    }
+    to {
+        transform: translateY(20px);
+        opacity: 0;
+
+    }
+}
+.user-widget:not(:hover) .user-popup {
+    animation: slideOut 0.5s ease-out;
+}
+
+#my-popover {
+    left: -213px;
+    right: 118px;
+    top: auto;
+    margin: auto;
+}
+
+.flash-message {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
+    display: none;
+}
+
+.register-link{
+    color: #3263c0;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}

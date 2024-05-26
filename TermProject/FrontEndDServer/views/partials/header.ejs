@@ -6,9 +6,17 @@
         <li class="nav-item"><a href="<%= aboutLinkClass %>" class="nav-link ">About</a></li>
         <li class="nav-item"><a href="<%= galleryLinkClass %>" class="nav-link ">Gallery</a></li>
         <li class="nav-item"><a href="<%= mapsLink %>" class="nav-link <%= mapsLinkClass %> ">Maps</a></li>
-
-            <li class="nav-item"><a href="<%= addPlaceLink %>" class="nav-link <%= addPlaceLinkClass %>">Add Place</a></li>
-
+        <li class="nav-item"><a href="contact " class="nav-link">Contact Us</a></li>
     </ul>
-    <h3 class="contact-button"><a href="contact">Contact Us</a></h3>
+    <% if(user) { %>
+
+    <% if(user.userRoles[0]==="admin") { %>
+    <h3 class="contact-button"><a href="<%= addPlaceLink %>">Add Place</a></h3>
+    <% } else if(user.userRoles[0]==="user") { %>
+    <h3 class="contact-button"><a href="<%= addPlaceLink %>">Contact Us</a></h3>
+        <% } %>
+    <% }else{ %>
+    <h3 class="contact-button"><a href="/login">Login</a></h3>
+    <% } %>
+
 </header>
