@@ -2,6 +2,7 @@ const express = require('express');
 // const {join} = require("path");
 let server = express();
 let bodyParser = require('body-parser');
+server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(express.json());
 server.set("view engine", "ejs");
@@ -20,7 +21,7 @@ server.get('/', (req, res) => {
         mapsLinkClass: '', // Class for Maps link
         mapsLink: '/maps', // Class for Maps link
         addPlaceLink:'/add-place',
-        addPlaceLinkClass: ''
+        addPlaceLinkClass: '',
     });
 });
 
@@ -48,6 +49,7 @@ server.get('/maps', (req, res) => {
         addPlaceLinkClass: ''
     });
 });
+
 server.get('/add-place', (req, res) => {
     res.render('add-place', {
         pageClass: 'header-new-section', // Class for the header
@@ -60,5 +62,23 @@ server.get('/add-place', (req, res) => {
         addPlaceLinkClass: 'active'
     });
 });
+
+
+server.get('/login', (req, res) => {
+    res.render('Login', {
+        includeHeader:false,
+        includeFooter:false,
+
+    });
+});
+
+server.get('/register', (req, res) => {
+    res.render('register', {
+        includeHeader:false,
+        includeFooter:false,
+
+    });
+});
+
 
 server.listen(3000)

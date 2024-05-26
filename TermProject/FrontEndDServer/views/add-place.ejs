@@ -13,7 +13,7 @@
 
     <!-- Create Form -->
     <div class="api-form-container">
-        <form id="createForm" enctype="multipart/form-data">
+        <form id="createForm" method="POST" action="http://localhost:4000/api/landscapes" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="createName">Name:</label>
                 <input type="text" class="form-control" id="createName" name="name" required placeholder="Enter name">
