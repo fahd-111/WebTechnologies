@@ -1,0 +1,111 @@
+
+  /* New Design
+ */
+
+
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .resume {
+        background-image: url('./media/bg2.jpg');
+        object-fit: cover;
+        background-repeat: no-repeat;
+        background-position-y: -218px;
+        background-color: white;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+       
+    
+        color: white;
+        text-align: center;
+        
+    }
+    .header h1 {
+        margin: 0;
+        font-size: 2.5em;
+    }
+    .header p {
+        margin: 10px 0 0;
+        font-size: 1.2em;
+    }
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        background-image: url(./media//pp.svg);
+        background-size: cover;
+        margin: 20px 158px 41px auto;
+        box-shadow: 0 0 0 10px white inset; /* Adjust the last value (3px) for the desired stroke width */
+    }
+    .section {
+        margin: 20px 0;
+    }
+    .section-title {
+        color: #333;
+        border-bottom: 2px solid #333;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+    }
+    .experience-item, .education-item {
+        margin: 10px 0;
+    }
+    .experience-item h3, .education-item h3 {
+        margin: 0;
+        font-size: 1.2em;
+        color: #333;
+    }
+    .experience-item p, .education-item p {
+        margin: 5px 0;
+        font-size: 1em;
+        color: #666;
+    }
+    .contact-info, .skills {
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin: 13px 0;
+    }
+    .skill {
+        margin: 15px 0;
+    }
+    .skill-name {
+        font-weight: bold;
+    }
+    .skill-level {
+        height: 10px;
+        background-color: #2B554E;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+    }
+    .skill-level::after {
+        content: '';
+        display: block;
+        height: 10px;
+        background-color: #5cb85c;
+        width: 0; /* This width should be dynamic based on skill level */
+        border-radius: 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .contact-info p, .skills p {
+        margin: 0;
+        font-size: 1em;
+    }
+    .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+    .contact-item svg {
+        margin-right: 10px;
+    }

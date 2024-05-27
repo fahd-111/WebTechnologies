@@ -1,4 +1,0 @@
-{
-  "jwtPrivateKey": "yourSecurePrivateKey",
-  "sessionSecret": "its a secret session"
-}
