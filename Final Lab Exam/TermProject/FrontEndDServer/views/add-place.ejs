@@ -1,0 +1,41 @@
+
+
+
+
+<!--Contact Page Banner-->
+<div class = "contact-banner">
+    <h1 class = "contact-banner-text">Add Place</h1>
+    <img src="Server/Public/media/GilgitBaltistan.jpg" alt="Hello" class="contact-bg-img">
+</div>
+
+<div class="container data-form-uploader mt-5">
+    <h2 class="mb-4">Maps </h2>
+
+    <!-- Create Form -->
+    <div class="api-form-container">
+        <form id="createForm" method="POST" action="http://localhost:4000/api/landscapes" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="createName">Name:</label>
+                <input type="text" class="form-control" id="createName" name="name" required placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label for="createDescription">Description:</label>
+                <textarea class="form-control" id="createDescription" name="description" rows="3" required placeholder="Enter description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="createImage">Image:</label>
+                <input type="file" class="form-control-file" id="createImage" name="image" required>
+            </div>
+            <button id="createBtn" type="submit" class="btn btn-primary">Create</button>
+        </form>
+
+    </div>
+    <hr>
+    <!-- Pagination -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination" id="paginationAdmin"></ul>
+    </nav>
+    <!-- Display Stories -->
+    <div id="storiesListAdmin"></div>
+
+</div>
